@@ -1,4 +1,4 @@
-package com.llama.meetmind.ui.theme
+package com.llama.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -62,6 +62,9 @@ dependencies {
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
 
+    implementation(libs.naver.maps.sdk)
+//    implementation("com.naver.maps:map-sdk:3.22.1")
+
     // hilt
     implementation(libs.hilt)
     kapt(libs.hilt.compiler)

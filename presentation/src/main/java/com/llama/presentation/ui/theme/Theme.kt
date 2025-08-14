@@ -1,4 +1,4 @@
-package com.llama.meetmind.ui.theme
+package com.llama.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build
