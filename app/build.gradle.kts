@@ -76,6 +76,8 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.okhttp)
 
+    implementation(libs.naver.maps.sdk)
+
     // for instrumentation tests
     androidTestImplementation("com.google.dagger:hilt-android-testing:2.48.1")
 //    kaptAndroidTest("com.google.dagger:hilt-compiler:2.48.1")
