@@ -63,7 +63,9 @@ dependencies {
     debugImplementation(libs.ui.test.manifest)
 
     implementation(libs.naver.maps.sdk)
-//    implementation("com.naver.maps:map-sdk:3.22.1")
+    implementation(libs.naver.maps.forenewid.compose)
+    implementation(libs.naver.maps.forenewid.location)
+    implementation(libs.google.play.services.location)
 
     // hilt
     implementation(libs.hilt)
