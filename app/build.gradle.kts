@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     alias(libs.plugins.com.android.application)
     alias(libs.plugins.org.jetbrains.kotlin.android)
@@ -18,6 +20,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        val localProperties = gradleLocalProperties(rootDir)
+        manifestPlaceholders["NAVER_NCP_KEY_ID"] = localProperties["NAVER_NCP_KEY_ID"] ?: ""
     }
 
     buildTypes {
@@ -29,6 +33,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17

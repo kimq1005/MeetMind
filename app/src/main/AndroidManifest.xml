@@ -16,5 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.naver.maps.map.NCP_KEY_ID"
+            android:value="${NAVER_NCP_KEY_ID}"/>
     </application>
 </manifest>
