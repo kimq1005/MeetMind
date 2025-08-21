@@ -6,8 +6,5 @@ import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
 class MeetMainApp : Application() {
-    override fun onCreate() {
-        super.onCreate()
-//        NaverMapSdk.getInstance(this).client = NaverMapSdk.NcpKeyClient("kjk7ogkoul")
-    }
+
 }

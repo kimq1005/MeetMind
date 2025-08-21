@@ -23,6 +23,7 @@ naver-maps-sdk = "3.22.1"
 naver-map-location = "21.0.1"
 naver_map_compose = "1.7.2"
 google-play-services-location = "21.0.1"
+google-gemini-sdk = "0.8.0"
 
 [libraries]
 androidx-lifecycle-service = { group = "androidx.lifecycle", name = "lifecycle-service", version.ref = "lifecycle-runtime-ktx"}
@@ -73,6 +74,8 @@ naver-maps-sdk = { group = "com.naver.maps", name = "map-sdk", version.ref = "na
 naver-maps-forenewid-compose = { group = "io.github.fornewid", name = "naver-map-compose", version.ref = "naver_map_compose" }
 naver-maps-forenewid-location = { group = "io.github.fornewid", name = "naver-map-location", version.ref = "naver-map-location"}
 google-play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "google-play-services-location" }
+
+google-gemini-sdk = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "google-gemini-sdk" }
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "agp" }

@@ -21,7 +21,11 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         val localProperties = gradleLocalProperties(rootDir)
-        manifestPlaceholders["NAVER_NCP_KEY_ID"] = localProperties["NAVER_NCP_KEY_ID"] ?: ""
+//        manifestPlaceholders["NAVER_NCP_KEY_ID"] = localProperties["NAVER_NCP_KEY_ID"] ?: ""
+        manifestPlaceholders += mapOf(
+            "GOOGLE_GEMINI_KEY" to (localProperties["GOOGLE_GEMINI_KEY"] ?: ""),
+            "NAVER_NCP_KEY_ID" to (localProperties["NAVER_NCP_KEY_ID"] ?: "")
+        )
     }
 
     buildTypes {

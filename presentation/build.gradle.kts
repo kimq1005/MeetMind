@@ -62,10 +62,16 @@ dependencies {
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
 
+    // naver
     implementation(libs.naver.maps.sdk)
     implementation(libs.naver.maps.forenewid.compose)
     implementation(libs.naver.maps.forenewid.location)
+
+    // google service
     implementation(libs.google.play.services.location)
+
+    // gemini
+    implementation(libs.google.gemini.sdk)
 
     // hilt
     implementation(libs.hilt)
