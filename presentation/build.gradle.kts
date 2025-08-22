@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     alias(libs.plugins.com.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
@@ -14,6 +16,10 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+        val localProperties = gradleLocalProperties(rootDir)
+        val geminiKey: String = localProperties["GOOGLE_GEMINI_KEY"] as? String ?: ""
+
+        buildConfigField("String", "GOOGLE_GEMINI_KEY", "\"${geminiKey}\"")
     }
 
     buildTypes {
@@ -40,6 +46,7 @@ android {
     }
 
     buildFeatures {
+        buildConfig = true
         compose = true
     }
 }
