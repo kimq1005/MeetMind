@@ -15,7 +15,7 @@ class TestViewModel @Inject constructor(
 
 ): ViewModel(){
     private val generativeModel = GenerativeModel(
-        modelName = "gemini-pro",
+        modelName = "gemini-2.5-flash",
         apiKey = BuildConfig.GOOGLE_GEMINI_KEY
     )
 
@@ -28,7 +28,7 @@ class TestViewModel @Inject constructor(
 
                 val prompt = "두 사람의 위치 $user1Location 과 $user2Location 의 중간 지점에 있는 $placeType 을 추천해줘. 추천 장소의 이름, 주소, 특징을 포함해서 답변해줘."
                 val response = generativeModel.generateContent(prompt)
-                Log.d("TAG", "테스트 성공 Success: $response")
+                Log.d("TAG", "테스트 성공 Success: ${response.text}")
             } catch (e: Exception) {
                 Log.d("TAG", "테스트 에러 Error: $e")
             }
