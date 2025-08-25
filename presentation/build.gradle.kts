@@ -16,10 +16,6 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
-        val localProperties = gradleLocalProperties(rootDir)
-        val geminiKey: String = localProperties["GOOGLE_GEMINI_KEY"] as? String ?: ""
-
-        buildConfigField("String", "GOOGLE_GEMINI_KEY", "\"${geminiKey}\"")
     }
 
     buildTypes {
@@ -76,9 +72,6 @@ dependencies {
 
     // google service
     implementation(libs.google.play.services.location)
-
-    // gemini
-    implementation(libs.google.gemini.sdk)
 
     // hilt
     implementation(libs.hilt)

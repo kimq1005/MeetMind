@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     alias(libs.plugins.com.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
@@ -16,6 +18,11 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        val localProperties = gradleLocalProperties(rootDir)
+        val geminiKey: String = localProperties["GOOGLE_GEMINI_KEY"] as? String ?: ""
+
+        buildConfigField("String", "GOOGLE_GEMINI_KEY", "\"${geminiKey}\"")
     }
 
     buildTypes {
@@ -26,6 +33,10 @@ android {
                 "proguard-rules.pro"
             )
         }
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 
     compileOptions {
@@ -82,4 +93,7 @@ dependencies {
     implementation("androidx.work:work-runtime-ktx:2.9.0")
     implementation("androidx.hilt:hilt-work:1.1.0")
     kapt("androidx.hilt:hilt-compiler:1.1.0")
+
+    // gemini
+    implementation(libs.google.gemini.sdk)
 }

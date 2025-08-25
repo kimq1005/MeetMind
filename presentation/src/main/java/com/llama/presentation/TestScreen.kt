@@ -44,7 +44,10 @@ fun TestScreen(
 
         Button(
             onClick = {
-                viewModel.testSet()
+                viewModel.getMiddlePoint(
+                    middlePointRequest = "서울시청과 동대문",
+                    placeType = "맛집"
+                )
             }
         ) {
             Text("눌러욧")
