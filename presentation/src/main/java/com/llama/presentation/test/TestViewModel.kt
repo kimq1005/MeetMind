@@ -17,11 +17,14 @@ class TestViewModel @Inject constructor(
         placeType: String
     ) {
         viewModelScope.launch {
-            val text = getMiddlePointUseCase(
+            getMiddlePointUseCase(
                 middlePointRequest = middlePointRequest,
                 placeType = placeType
-            )
-            Log.d("TAG", "getMiddlePoint: $text")
+            ).onSuccess { text ->
+                Log.d("TAG", "getMiddlePoint Success: $text")
+            }.onFailure { e ->
+                Log.d("TAG", "getMiddlePoint Error: $e")
+            }
         }
     }
 }
