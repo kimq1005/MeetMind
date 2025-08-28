@@ -1,5 +1,6 @@
 [versions]
 agp = "8.1.0"
+secrets-gradle-plugin = "2.0.1"
 org-jetbrains-kotlin-android = "1.8.10"
 core-ktx = "1.9.0"
 junit = "4.13.2"
@@ -24,6 +25,8 @@ naver-map-location = "21.0.1"
 naver_map_compose = "1.7.2"
 google-play-services-location = "21.0.1"
 google-gemini-sdk = "0.8.0"
+google-place_sdk = "2.6.0"
+google-places-ktx = "2.0.0"
 
 [libraries]
 androidx-lifecycle-service = { group = "androidx.lifecycle", name = "lifecycle-service", version.ref = "lifecycle-runtime-ktx"}
@@ -76,6 +79,8 @@ naver-maps-forenewid-location = { group = "io.github.fornewid", name = "naver-ma
 google-play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "google-play-services-location" }
 
 google-gemini-sdk = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "google-gemini-sdk" }
+google-place-sdk = { module = "com.google.android.libraries.places:places", version.ref = "google-place_sdk" }
+google-place-ktx = { module = "com.google.maps.android:places-ktx", version.ref = "google-places-ktx" }
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "agp" }
@@ -87,4 +92,4 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt"}
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "org-jetbrains-kotlin-android"}
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "org-jetbrains-kotlin-android"}
 com-android-dynamic-feature = { id = "com.android.dynamic-feature", version.ref = "agp" }
-
+com-android-google-secrets-gradle = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secrets-gradle-plugin" }

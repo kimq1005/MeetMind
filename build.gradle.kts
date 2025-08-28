@@ -8,4 +8,5 @@ plugins {
     alias(libs.plugins.kotlin.kapt) apply false
     alias(libs.plugins.kotlin.parcelize) apply false
     alias(libs.plugins.com.android.dynamic.feature) apply false
+    alias(libs.plugins.com.android.google.secrets.gradle) apply false
 }

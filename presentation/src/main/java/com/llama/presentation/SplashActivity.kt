@@ -12,6 +12,8 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import com.google.android.libraries.places.api.Places
+import com.google.android.libraries.places.api.net.PlacesClient
 import com.naver.maps.geometry.LatLng
 import com.naver.maps.map.CameraPosition
 import com.naver.maps.map.NaverMapSdk
@@ -23,10 +25,16 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
+    private lateinit var placesClient: PlacesClient
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            TestScreen()
+            placesClient = Places.createClient(this)
+
+            TestScreen(
+                placesClient = placesClient
+            )
         }
     }
 }

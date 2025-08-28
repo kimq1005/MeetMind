@@ -73,6 +73,10 @@ dependencies {
     // google service
     implementation(libs.google.play.services.location)
 
+    // google place
+    implementation(libs.google.place.sdk)
+    implementation(libs.google.place.ktx)
+
     // hilt
     implementation(libs.hilt)
     kapt(libs.hilt.compiler)

@@ -20,7 +20,7 @@ android {
         consumerProguardFiles("consumer-rules.pro")
 
         val localProperties = gradleLocalProperties(rootDir)
-        val geminiKey: String = localProperties["GOOGLE_GEMINI_KEY"] as? String ?: ""
+        val geminiKey = localProperties["GOOGLE_GEMINI_KEY"] as? String ?: ""
 
         buildConfigField("String", "GOOGLE_GEMINI_KEY", "\"${geminiKey}\"")
     }

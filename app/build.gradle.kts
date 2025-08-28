@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.org.jetbrains.kotlin.android)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.hilt)
+    alias(libs.plugins.com.android.google.secrets.gradle)
     id("kotlin-kapt")
 }
 
@@ -21,10 +22,14 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         val localProperties = gradleLocalProperties(rootDir)
-        manifestPlaceholders += mapOf(
-            "GOOGLE_GEMINI_KEY" to (localProperties["GOOGLE_GEMINI_KEY"] ?: ""),
-            "NAVER_NCP_KEY_ID" to (localProperties["NAVER_NCP_KEY_ID"] ?: "")
-        )
+//        manifestPlaceholders += mapOf(
+//            "GOOGLE_GEMINI_KEY" to (localProperties["GOOGLE_GEMINI_KEY"] ?: ""),
+//            "NAVER_NCP_KEY_ID" to (localProperties["NAVER_NCP_KEY_ID"] ?: ""),
+//            "GOOGLE_PLACE_SDK_KEY" to (localProperties["GOOGLE_PLACE_SDK_KEY"] ?: "")
+//        )
+
+        val googlePlaceSdkKey = localProperties["GOOGLE_PLACE_SDK_KEY"] as? String ?: ""
+        buildConfigField("String", "GOOGLE_PLACE_SDK_KEY", "\"${googlePlaceSdkKey}\"")
     }
 
     buildTypes {
@@ -86,6 +91,10 @@ dependencies {
     implementation(libs.okhttp)
 
     implementation(libs.naver.maps.sdk)
+
+    // google place
+    implementation(libs.google.place.sdk)
+    implementation(libs.google.place.ktx)
 
     // for instrumentation tests
     androidTestImplementation("com.google.dagger:hilt-android-testing:2.48.1")
