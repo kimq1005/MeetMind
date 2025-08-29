@@ -32,7 +32,6 @@ import com.naver.maps.map.compose.rememberCameraPositionState
 @OptIn(ExperimentalNaverMapApi::class)
 @Composable
 fun TestScreen(
-    modifier: Modifier = Modifier,
     viewModel: TestViewModel = hiltViewModel(),
     placesClient: PlacesClient,
 ) {
@@ -44,7 +43,7 @@ fun TestScreen(
             ),
     ) {
         val seoul = LatLng(37.532600, 127.024612)
-        val cameraPositionState: CameraPositionState = rememberCameraPositionState {
+        val cameraPositionState = rememberCameraPositionState {
             // 카메라 초기 위치를 설정합니다.
             position = CameraPosition(seoul, 11.0)
         }
