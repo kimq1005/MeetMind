@@ -66,7 +66,9 @@ fun TestScreen(
                     )
                 }
             ) {
-                Text("눌러욧")
+                Text(
+                    text = "눌러주세요."
+                )
             }
 
             PlacePickerScreen(
